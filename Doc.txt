@@ -1,0 +1,10 @@
+k6 run script.js
+set "K6_WEB_DASHBOARD=true" && k6 run script.js
+
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run script.js
+
+$env:K6_WEB_DASHBOARD = "true"
+k6 run script.js
+
+$env:K6_WEB_DASHBOARD_EXPORT = "html-report.html"
+k6 run script.js
