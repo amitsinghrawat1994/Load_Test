@@ -1,9 +1,17 @@
 import http from 'k6/http';
 import { sleep, check } from 'k6';
 
+// export const options = {
+//   vus: 1000,
+//   duration: '30s',
+// };
+
 export const options = {
-  vus: 1000,
-  duration: '30s',
+  stages: [
+    { duration: '30s', target: 2000 },
+    { duration: '1m30s', target: 1000 },
+    { duration: '20s', target: 0 },
+  ],
 };
 
 // The function that defines VU logic.
